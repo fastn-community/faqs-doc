@@ -1,0 +1,24 @@
+-- import: fastn-community.github.io/faqs-doc/data
+-- import: fastn-community.github.io/faqs-doc/docs
+-- import: fastn-community.github.io/faqs-doc/lib
+
+
+
+-- docs.home:
+created-by: By **Priyanka**
+
+
+
+
+-- component faqs:
+caption title:
+optional body subtitle:
+data.faq list faq-list:
+
+
+-- lib.faq-helper: $faqs.title
+subtitle: $faqs.subtitle
+faq-list: $faqs.faq-list
+
+
+-- end: faqs
