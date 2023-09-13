@@ -1,0 +1,110 @@
+-- import: fastn-community.github.io/faqs-doc
+-- import: fastn-community.github.io/faqs-doc/data
+-- import: cdc
+
+
+
+-- component home:
+string package-name: faqs-doc
+string package-full-name: fastn-community.github.io/faqs-doc
+optional string license-url: https://github.com/fastn-community/faqs-doc/blob/home/LICENSE
+string github: https://github.com/fastn-community/faqs-doc/
+module category: fastn-community.github.io/faqs-doc
+optional string preview-url:
+optional string created-by:
+optional string creator-url:
+optional body description:
+ftd.type-data types: $inherited.types
+
+-- cdc.page:
+
+-- cdc.hero-section: $home.package-name
+creator-name: $home.created-by
+cta-primary-text: View more hero designs
+cta-primary-link: https://fastn.com/faqd/
+cta-secondary-text: Preview
+cta-secondary-link: $home.preview-url
+github-url: $home.github
+license-url: $home.license-url
+
+-- cdc.preview: faq
+
+-- cdc.code-with-preview:
+
+$sample-code(a = $home.package-full-name, cname = faq)
+
+-- home.category.faqs: Title copy goes here
+faq-list: $data.list-of-faqs
+
+sagittis eros. Quisque quis euismod lorem. Etiam sodales ac felis id interdum.
+Proin viverra nulla sem, vel molestie lacus volutpat nec. Integer ut bibendum erat.
+
+-- end: cdc.code-with-preview
+
+-- end: cdc.preview
+
+
+-- cdc.overview: Properties
+
+-- cdc.component-property: `title`
+type: caption  (`optional`)
+
+It's used to define the title for your faqs component.
+
+-- cdc.component-property: `subtitle`
+type: body (`optional`)
+
+It's used to define the subtitle for your faqs component.
+
+-- cdc.component-property: `faq-list`
+type: list (`required`)
+
+It's used to define the faq list for faqs  component.
+
+-- end: cdc.overview
+
+-- end: cdc.page
+
+-- end: home
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- string sample-code(a,cname):
+string a:
+string cname:
+
+"\;; In FASTN.ftd \\n"
++ "-- fastn.dependency:" + a + "\\n\\n"
++ "\;; In the file where you want to add the header (e.g., `index.ftd`)\\n\\n"
++ "\;; Add this at the top of the file\\n"
++ "-- import: " + a + " as faqs\\n\\n"
++ "\;; Add this where you want to show the component\\n"
++ "-- faqs." + cname +": Title copy goes here\\n"
++ "faq-list: $faqs-list\\n\\n"
++ "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros. Quisque quis euismod lorem. Etiam sodales ac felis id interdum. Proin viverra nulla sem, vel molestie lacus volutpat nec. Integer ut bibendum erat."
+
